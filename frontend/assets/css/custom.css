@@ -1,0 +1,275 @@
+/*INDEX*/
+/* Colores y detalles corporativos */
+:root {
+    --primary-color: #0A2540; /* azul ICV */
+    --secondary-color: #00B4D8; /* azul claro */
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f8;
+}
+
+/* Contenedor de partículas */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Fondo detrás del contenido */
+    background: #f4f6f8;
+    pointer-events: none;
+}
+
+/* Navbar personalizado */
+.navbar {
+    background-color: var(--primary-color) !important;
+}
+
+.btn-info {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
+
+.btn-info:hover {
+    background-color: #0096c7 !important;
+    border-color: #0096c7 !important;
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+}
+/* ===== HERO ESTABLE ===== */
+.hero-section {
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+}
+
+/* ===== HERO CARD CUADRO TRANSPARENTE ===== */
+.hero-card {
+    /* Cambiamos de 0.85 a 0.95 para que sea menos transparente */
+    background: rgba(255, 255, 255, 0.30); 
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+    /* Esto evita que las imágenes se salgan de los bordes redondeados */
+    overflow: hidden; 
+}
+
+/* ===== CARRUSEL ===== */
+#carouselICV {
+    height: 350px; /* Cambiado a height fijo para consistencia */
+    display: flex;
+    align-items: center; /* Centra la imagen verticalmente si es pequeña */
+    justify-content: center;
+}
+
+#carouselICV .carousel-inner {
+    height: 100%;
+}
+
+#carouselICV .carousel-item {
+    height: 100%;
+}
+
+#carouselICV .carousel-item img.carousel-img {
+    width: 100%;
+    height: 100%;
+    /* 'contain' es bueno, pero si quieres que llene el cuadro usa 'cover' 
+       o ajusta el contenedor para que no se vea aire */
+    object-fit: contain; 
+    border-radius: 10px;
+}
+
+/* Transición fade más suave */
+.carousel-fade .carousel-item {
+    transition: opacity 1.5s ease-in-out;
+}
+
+
+/*LOGIN*/
+/* ===== LOGIN CARD ===== */
+.login-card {
+    width: 420px;              /* más grande */
+    padding: 35px;             /* más espacio interno */
+    background: rgba(255, 255, 255, 0.9); /* transparente elegante */
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    z-index: 2;
+}
+
+/* ===== TEXTOS DEL LOGIN ===== */
+.login-card h4 {
+    color: #000; /* Título negro */
+}
+
+.login-card label {
+    color: #000; /* Labels negros */
+    font-weight: 500;
+}
+
+/* ===== INPUTS ===== */
+.login-card input {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+}
+
+/* Placeholder */
+.login-card input::placeholder {
+    color: #6c757d;
+}
+
+/* ===== BOTÓN ===== */
+.login-card button {
+    font-weight: 600;
+}
+
+/*PAGINA DE INCIO*/
+/* TARJETA BIENVENIDA */
+.welcome-card {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+}
+
+/* TARJETA EMPRESA */
+.empresa-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+}
+
+.empresa-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+
+/*PAGINA EMPRESA*/
+/* Card tabla */
+.table-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+}
+
+/* Tabla */
+.table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* Botones acciones */
+.btn-warning {
+    color: #000;
+}
+
+.btn-warning:hover {
+    background-color: #f1c40f;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+
+/*CREATE Y EDIT*/ 
+.form-card {
+    width: 100%;
+    max-width: 700px !important;  /* MÁS GRANDE */
+    padding: 40px 45px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.92)!important;
+    backdrop-filter: blur(8px);
+}
+
+.form-card label {
+    color: #000;
+    font-weight: 600;
+}
+
+.form-card input {
+    padding: 12px;
+    font-size: 16px;
+}
+
+
+/* =============================================
+   ESTILOS RESPONSIVE (MÓVILES)
+   ============================================= */
+
+@media (max-width: 768px) {
+    
+    /* Global */
+    body {
+        font-size: 14px;
+    }
+
+    /* INDEX - HERO SECTION */
+    .hero-section {
+        min-height: auto;
+        padding: 40px 10px;
+    }
+    
+    .hero-card {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    #carouselICV {
+        height: 250px; /* Reducimos altura en móvil */
+    }
+
+    /* LOGIN */
+    .login-card {
+        width: 90% !important; /* En lugar de 420px fixed */
+        max-width: 400px;
+        padding: 25px 20px;
+    }
+
+    /* PAGINA DE INICIO (Tarjetas de Empresa) */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* PAGINA EMPRESA (Tablas Responsive) */
+    /* Este truco hace que la tabla se pueda deslizar de lado si es muy ancha */
+    .table-card {
+        overflow-x: auto;
+        padding: 10px;
+    }
+
+    .table th, .table td {
+        white-space: nowrap; /* Evita que el texto se amontone */
+    }
+
+    /* CREATE Y EDIT (Formularios) */
+    .form-card {
+        width: 95% !important;
+        padding: 25px 20px !important;
+        margin: 20px auto;
+        border-radius: 12px;
+    }
+
+    .form-card h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Ajuste de botones para que sean fáciles de tocar con el pulgar */
+    .btn {
+        width: 100%; /* Botones a ancho completo en móvil */
+        margin-bottom: 10px;
+        padding: 12px;
+    }
+}
